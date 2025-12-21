@@ -3,20 +3,113 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TechUnit | Digital Infrastructure</title>
+    <title>TechUnit | Technical Co-Founders</title>
     <style>
-        body { margin: 0; padding: 0; display: flex; justify-content: center; align-items: center; height: 100vh; background-color: #0a0a0a; color: #ffffff; font-family: sans-serif; text-align: center; }
-        h1 { font-size: 3rem; margin-bottom: 10px; }
-        p { color: #888; font-size: 1.2rem; }
-        .btn { text-decoration: none; color: #000; background: #fff; padding: 10px 20px; border-radius: 5px; font-weight: bold; }
+        :root {
+            --bg-color: #0B1120; /* Deep Navy */
+            --text-color: #E2E8F0; /* Slate Grey */
+            --accent-color: #38BDF8; /* Electric Blue */
+            --font-main: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: var(--font-main);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* The "Badge" - Industrial Style */
+        .status-badge {
+            background: rgba(56, 189, 248, 0.1);
+            color: var(--accent-color);
+            padding: 8px 16px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-weight: 700;
+            margin-bottom: 24px;
+            border: 1px solid rgba(56, 189, 248, 0.2);
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin: 0 0 16px 0;
+            letter-spacing: -2px;
+            line-height: 1.1;
+        }
+
+        p {
+            font-size: 1.125rem;
+            color: #94A3B8; /* Muted Grey */
+            max-width: 500px;
+            line-height: 1.6;
+            margin-bottom: 40px;
+        }
+
+        /* The CTA Button */
+        .cta-button {
+            background-color: var(--text-color);
+            color: var(--bg-color);
+            padding: 16px 32px;
+            text-decoration: none;
+            font-weight: 700;
+            border-radius: 2px;
+            transition: all 0.2s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.875rem;
+        }
+
+        .cta-button:hover {
+            background-color: var(--accent-color);
+            color: var(--bg-color);
+            transform: translateY(-2px);
+        }
+
+        /* Footer Info */
+        .footer {
+            position: absolute;
+            bottom: 40px;
+            font-size: 0.75rem;
+            color: #475569;
+            letter-spacing: 1px;
+        }
+
+        /* Mobile Adjustments */
+        @media (max-width: 600px) {
+            h1 { font-size: 2.5rem; }
+            p { font-size: 1rem; }
+        }
     </style>
 </head>
 <body>
-    <div>
-        <h1>TechUnit</h1>
-        <p>We act as the Technical Co-Founder for ambitious startups in the UAE🇦🇪</p>
-        <br> 
-        <a href="mailto:tariq@techunit.ae" class="btn">lets talk!</a>
+
+    <div class="status-badge">System Status: Hiring</div>
+
+    <h1>TechUnit.</h1>
+    
+    <p>
+        We build the engines for ambitious startups. <br>
+        We are currently scouting top-tier <strong>Designers</strong> and <strong>Engineers</strong> for our 2026 Core Team.
+    </p>
+
+    <a href="mailto:careers@techunit.ae?subject=Application: [Your Name] - [Role]" class="cta-button">
+        Join the Unit
+    </a>
+
+    <div class="footer">
+        DUBAI // EST. 2025 // OP_SEC_LEVEL_1
     </div>
+
 </body>
 </html>
