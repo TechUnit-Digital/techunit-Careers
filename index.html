@@ -11,25 +11,34 @@
     color: #ffffff;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     
-    /* FLEXBOX LAYOUT */
+    /* LAYOUT ENGINE */
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
     
-    /* MOBILE SAFARI FIX: Use 'dvh' */
+    /* CRITICAL MOBILE FIX */
     min-height: 100dvh; 
     margin: 0;
-    padding: 20px;
-    text-align: center;
+    padding: 0 20px;
     box-sizing: border-box;
+    text-align: center;
   }
 
-  /* 2. RESPONSIVE TYPOGRAPHY */
+  /* 2. CENTER STAGE */
+  .center-stage {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+
+  /* 3. TYPOGRAPHY */
   h1 {
     font-size: clamp(2.5rem, 8vw, 4.5rem); 
     font-weight: 700;
-    margin: 0 0 1rem 0;
+    margin: 0 0 1.5rem 0;
     letter-spacing: -1.5px;
     line-height: 1.1;
     background: -webkit-linear-gradient(#fff, #888);
@@ -42,13 +51,13 @@
     font-size: clamp(1rem, 4vw, 1.3rem); 
     max-width: 600px;
     line-height: 1.6;
-    margin-bottom: 3rem;
+    margin-bottom: 3.5rem;
     font-weight: 400;
   }
 
   strong { color: #ffffff; font-weight: 600; }
 
-  /* 3. ANIMATION */
+  /* 4. ANIMATION */
   .fade-up {
     opacity: 0;
     transform: translateY(20px);
@@ -63,11 +72,11 @@
     to { opacity: 1; transform: translateY(0); }
   }
 
-  /* 4. THE BUTTON */
+  /* 5. BUTTON */
   .btn {
     background-color: #ffffff;
     color: #000000;
-    padding: 16px 32px;
+    padding: 18px 36px;
     font-size: 0.85rem;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -86,10 +95,10 @@
     transform: scale(1.02);
   }
 
-  /* 5. THE RESPONSIVE FOOTER */
+  /* 6. FOOTER */
   .footer {
-    margin-top: auto;
-    padding-top: 40px;
+    padding-bottom: 40px;
+    padding-top: 20px;
     font-size: 0.7rem;
     color: #444;
     text-transform: uppercase;
@@ -98,9 +107,9 @@
     flex-direction: column;
     gap: 8px;
     line-height: 1.5;
+    flex-shrink: 0;
   }
 
-  /* Tablet/Desktop Tweaks */
   @media (min-width: 768px) {
     .footer {
       flex-direction: row;
@@ -114,19 +123,23 @@
 </head>
 <body>
 
-  <h1 class="fade-up delay-1">TechUnit</h1>
+  <div class="center-stage">
+    
+    <h1 class="fade-up delay-1">TechUnit</h1>
 
-  <p class="fade-up delay-2 sub">
-    Architecting the digital infrastructure for the UAE's most ambitious ventures.<br><br>
-    We are assembling our <strong>Founding Team</strong> for 2026.<br>
-    Scouting for a <strong>Principal Technical Lead</strong> and a <strong>Lead Product Designer</strong>.
-  </p>
+    <p class="fade-up delay-2 sub">
+      Architecting the digital infrastructure for the UAE's most ambitious ventures.<br><br>
+      We are assembling our <strong>Founding Team</strong> for 2026.<br>
+      Scouting for a <strong>Principal Technical Lead</strong> and a <strong>Lead Product Designer</strong>.
+    </p>
 
-  <div class="fade-up delay-3">
-    <a class="btn" 
-       href="mailto:careers@techunit.ae?subject=Application%3A%20Founding%20Team&body=Hi%20TechUnit%20I%20am%20applying%20for%20the%20founding%20team%20role%20and%20here%20is%20my%20portfolio%20[LINK]%20which%20demonstrates%20why%20I%20am%20the%20right%20architect%20for%20your%202026%20core%20team.">
-       APPLY FOR ACCESS
-    </a>
+    <div class="fade-up delay-3">
+      <a class="btn" 
+         href="mailto:careers@techunit.ae?subject=Application%3A%20Founding%20Team%20(2026)&body=Hi%20TechUnit%2C%0A%0AI%20am%20applying%20for%20the%20role%20of%3A%20%5B%20Tech%20Lead%20%2F%20Product%20Designer%20%5D%0A%0AThe%20Specs%3A%0A%E2%80%A2%20Portfolio%2FGitHub%3A%20%0A%E2%80%A2%20LinkedIn%3A%20%0A%E2%80%A2%20Location%3A%20%5B%20Dubai%20%2F%20Remote%20%5D%0A%0AMy%20Pitch%20(One%20Sentence)%3A%0A...">
+         APPLY FOR ACCESS
+      </a>
+    </div>
+
   </div>
 
   <div class="fade-up delay-4 footer">
