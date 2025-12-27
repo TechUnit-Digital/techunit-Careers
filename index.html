@@ -11,15 +11,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
 
     <style>
-        /* CSS RESET & VARIABLES */
         :root {
-            --bg-color: #F4F4F4; /* Light Grey Background */
+            --bg-color: #F4F4F4;
             --card-color: #FFFFFF;
             --text-main: #111111;
             --text-muted: #666666;
-            --accent: #000000;
-            --spacing: 24px;
-            --radius: 4px; /* Small radius for 'Industrial' feel */
+            --border: #E5E5E5;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -32,142 +29,66 @@
             padding: 20px;
         }
 
-        /* LAYOUT CONTAINER */
         .container {
-            max-width: 680px;
+            max-width: 720px;
             margin: 60px auto;
             background: var(--card-color);
             padding: 60px;
             box-shadow: 0 4px 20px rgba(0,0,0,0.05);
-            border: 1px solid #E5E5E5;
+            border: 1px solid var(--border);
         }
 
         /* HEADER */
-        header { margin-bottom: 60px; }
-        
+        header { margin-bottom: 50px; }
         .status-badge {
-            display: inline-block;
-            background: #000;
-            color: #fff;
-            font-size: 10px;
-            font-weight: 800;
-            text-transform: uppercase;
-            padding: 4px 8px;
-            letter-spacing: 1px;
-            margin-bottom: 20px;
+            background: #000; color: #fff; font-size: 10px; font-weight: 800;
+            text-transform: uppercase; padding: 4px 8px; letter-spacing: 1px;
+            margin-bottom: 20px; display: inline-block;
         }
+        h1 { font-size: 42px; font-weight: 800; letter-spacing: -1.5px; line-height: 1.1; margin-bottom: 10px; }
+        .tagline { font-size: 18px; color: var(--text-muted); }
 
-        h1 {
-            font-size: 42px;
-            font-weight: 800;
-            letter-spacing: -1.5px;
-            line-height: 1.1;
-            margin-bottom: 10px;
-        }
-
-        .tagline {
-            font-size: 18px;
-            color: var(--text-muted);
-            font-weight: 400;
-        }
-
-        /* SECTION TITLES */
-        h2 {
-            font-size: 14px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            border-bottom: 1px solid #E5E5E5;
-            padding-bottom: 10px;
-            margin: 50px 0 20px 0;
-            color: var(--text-muted);
-        }
-
-        /* WARNING BOX */
+        /* ALERT */
         .alert-box {
-            background: #FFF0F0; /* Soft Red Warning */
-            border-left: 4px solid #FF0000;
-            padding: 20px;
-            margin-bottom: 40px;
+            background: #FFF0F0; border-left: 4px solid #FF0000; padding: 20px; margin-bottom: 50px;
         }
-        
-        .alert-box p { font-size: 14px; margin-bottom: 8px; }
-        .alert-box strong { color: #D00000; }
+        .alert-box strong { color: #D00000; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; display: block; margin-bottom: 5px; }
+        .alert-box p { font-size: 14px; margin-bottom: 4px; }
 
-        /* ROLE CARDS (The New Look) */
+        /* UNIT SECTIONS */
+        .unit-header {
+            font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 2px;
+            color: #999; margin: 40px 0 15px 0; border-bottom: 1px solid #EEE; padding-bottom: 10px;
+        }
+
         .role-card {
-            border: 1px solid #E5E5E5;
-            padding: 20px;
-            margin-bottom: 15px;
-            transition: transform 0.2s ease, border-color 0.2s ease;
+            border: 1px solid var(--border); padding: 20px; margin-bottom: 15px;
+            transition: all 0.2s ease;
         }
-
-        .role-card:hover {
-            transform: translateY(-2px);
-            border-color: #000;
-        }
-
-        .role-title {
-            font-weight: 700;
-            font-size: 18px;
-            display: block;
-            margin-bottom: 4px;
-        }
-
-        .role-stack { font-family: monospace; font-size: 12px; color: var(--text-muted); display: block; margin-bottom: 8px;}
+        .role-card:hover { border-color: #000; transform: translateX(5px); }
+        
+        .role-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px; }
+        .role-title { font-weight: 700; font-size: 16px; }
+        .role-type { font-size: 10px; background: #EEE; padding: 2px 6px; border-radius: 2px; font-weight: 600; }
+        
+        .role-stack { font-family: monospace; font-size: 11px; color: var(--text-muted); display: block; margin-bottom: 8px; }
         .role-req { font-size: 13px; color: var(--text-main); }
-
-        /* PROTOCOL STEPS */
-        .step {
-            display: flex;
-            margin-bottom: 15px;
-            font-size: 15px;
-        }
-        .step-num {
-            font-weight: 800;
-            margin-right: 15px;
-            color: #DDD;
-        }
 
         /* BUTTON */
         .btn {
-            display: block;
-            background-color: #000;
-            color: #fff;
-            text-decoration: none;
-            padding: 18px;
-            text-align: center;
-            font-weight: 700;
-            font-size: 14px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-top: 40px;
-            transition: background 0.2s ease;
+            display: block; background-color: #000; color: #fff; text-decoration: none;
+            padding: 20px; text-align: center; font-weight: 700; font-size: 14px;
+            text-transform: uppercase; letter-spacing: 1px; margin-top: 50px;
         }
-
-        .btn:hover {
-            background-color: #333;
-        }
-
-        .btn-sub {
-            text-align: center;
-            font-size: 11px;
-            color: #999;
-            margin-top: 10px;
-        }
+        .btn:hover { background-color: #333; }
+        .btn-sub { text-align: center; font-size: 11px; color: #999; margin-top: 10px; }
 
         /* FOOTER */
         footer {
-            margin-top: 80px;
-            padding-top: 20px;
-            border-top: 1px solid #E5E5E5;
-            font-size: 11px;
-            color: #888;
-            display: flex;
-            justify-content: space-between;
+            margin-top: 80px; padding-top: 20px; border-top: 1px solid var(--border);
+            font-size: 11px; color: #888; display: flex; justify-content: space-between;
         }
 
-        /* MOBILE OPTIMIZATION */
         @media (max-width: 600px) {
             .container { padding: 30px 20px; margin: 0; width: 100%; border: none; }
             h1 { font-size: 32px; }
@@ -179,55 +100,73 @@
 
     <div class="container">
         <header>
-            <div class="status-badge">SYSTEM OPERATIONAL</div>
+            <div class="status-badge">RECRUITMENT ACTIVE</div>
             <h1>TechUnit.</h1>
             <div class="tagline">The Technical Co-Founder for Dubai.</div>
         </header>
 
         <div class="alert-box">
-            <p><strong>⚠️ DEPLOYMENT STANDARDS</strong></p>
+            <strong>⚠️ Deployment Protocol</strong>
             <p>• No Agencies. Individuals only.</p>
             <p>• Must be based in Dubai (Required).</p>
-            <p>We are looking for "End-to-End" ownership. If you need a manager to tell you what to do, do not apply.</p>
+            <p>We are building a roster of elite specialists. If you are junior, do not apply.</p>
+        </div>
+
+        <div class="unit-header">Unit 01: Product Core</div>
+        
+        <div class="role-card">
+            <div class="role-top">
+                <span class="role-title">Senior Generalist (Full-Stack)</span>
+                <span class="role-type">BUILDER</span>
+            </div>
+            <span class="role-stack">REACT / NODE / PYTHON / SQL</span>
+            <span class="role-req">Must be capable of building an entire MVP solo.</span>
+        </div>
+
+        <div class="role-card">
+            <div class="role-top">
+                <span class="role-title">Mobile Architect</span>
+                <span class="role-type">BUILDER</span>
+            </div>
+            <span class="role-stack">REACT NATIVE / FLUTTER</span>
+            <span class="role-req">Focus on efficiency: One codebase, two apps (iOS & Android).</span>
+        </div>
+
+        <div class="role-card">
+            <div class="role-top">
+                <span class="role-title">Product Designer</span>
+                <span class="role-type">VISUAL</span>
+            </div>
+            <span class="role-stack">UI/UX / BRANDING / PROTOTYPING</span>
+            <span class="role-req">Must adapt to any client style (Corporate, Creative, or Minimal).</span>
+        </div>
+
+        <div class="unit-header">Unit 02: Infrastructure & Intelligence</div>
+
+        <div class="role-card">
+            <div class="role-top">
+                <span class="role-title">Cloud & DevOps Architect</span>
+                <span class="role-type">SCALER</span>
+            </div>
+            <span class="role-stack">AWS / DOCKER / CI/CD PIPELINES</span>
+            <span class="role-req">Must know how to optimize costs and secure servers.</span>
+        </div>
+
+        <div class="role-card">
+            <div class="role-top">
+                <span class="role-title">AI & Automation Engineer</span>
+                <span class="role-type">SPECIALIST</span>
+            </div>
+            <span class="role-stack">OPENAI API / PYTHON / LANGCHAIN</span>
+            <span class="role-req">Must have experience deploying live AI integrations.</span>
         </div>
 
         <section>
-            <h2>Active Recruitment</h2>
-            
-            <div class="role-card">
-                <span class="role-title">01. Senior Generalist (Full-Stack)</span>
-                <span class="role-stack">STACK: REACT / NODE / PYTHON / SQL</span>
-                <span class="role-req">Must be capable of building an entire MVP solo. No "Frontend only" devs.</span>
-            </div>
-
-            <div class="role-card">
-                <span class="role-title">02. Cross-Platform Mobile Lead</span>
-                <span class="role-stack">STACK: REACT NATIVE / FLUTTER</span>
-                <span class="role-req">Focus on efficiency: One codebase, two apps (iOS & Android).</span>
-            </div>
-
-            <div class="role-card">
-                <span class="role-title">03. Product Designer (Generalist)</span>
-                <span class="role-stack">SCOPE: UI/UX / BRANDING / PROTOTYPING</span>
-                <span class="role-req">Versatility is key. Must adapt to any client style (Corporate, Creative, or Minimal).</span>
-            </div>
-        </section>
-
-        <section>
-            <h2>Application Protocol</h2>
-            
-            <div class="step">
-                <div class="step-num">01</div>
-                <div>Click the button below to generate your application.</div>
-            </div>
-            <div class="step">
-                <div class="step-num">02</div>
-                <div><strong>CRITICAL:</strong> You must manually attach your CV (PDF).</div>
-            </div>
-            <div class="step">
-                <div class="step-num">03</div>
-                <div>Emails without attachments are auto-deleted.</div>
-            </div>
+            <div class="unit-header">Application Protocol</div>
+            <p style="font-size: 14px; margin-bottom: 20px;">
+                <strong>CRITICAL:</strong> You must manually attach your CV (PDF).<br>
+                Emails without attachments are auto-deleted by our server.
+            </p>
 
             <a href="mailto:careers@techunit.ae?subject=Application%3A%20%5BRole%20Name%5D%20-%20%5BYour%20Name%5D&body=%5B%20STOP%20%5D%20Did%20you%20attach%20your%20CV%20as%20a%20PDF%3F%20We%20delete%20emails%20without%20it.%0A%0AName%3A%0A%0APhone%20Number%20(WhatsApp)%3A%0A%0ACurrent%20Location%20(City%2C%20Area)%3A%0A%0AVisa%20Status%20(Freelance%2FEmployment)%3A%0A%0ALink%20to%20Portfolio%2FGitHub%20(Required)%3A%0A%0AWhy%20you%20fit%20TechUnit%20(1%20Sentence)%3A" class="btn">
                 Initiate Application
